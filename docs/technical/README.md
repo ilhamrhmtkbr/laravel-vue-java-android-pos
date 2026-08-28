@@ -63,28 +63,28 @@ Justifikasi pemilihan versi dan alasan teknis mendalam dijelaskan pada [`system-
 
 ```
 ┌─────────────┐     ┌─────────────┐     ┌──────────────────┐
-│  Vue Web    │     │  Android    │     │  (Future) Third-  │
-│  (Back-office│    │  Mobile App │     │  Party Clients    │
-│  & Kasir Web)│    │  (Kasir     │     │                   │
-│             │     │  Lapangan)  │     │                   │
-└──────┬──────┘     └──────┬──────┘     └─────────┬─────────┘
-       │                   │                       │
-       └───────────────────┼───────────────────────┘
-                            ▼
+│  Vue Web    │     │  Android    │     │  (Future) Third- │
+│  (Back-office│    │  Mobile App │     │  Party Clients   │
+│  & Kasir Web)│    │  (Kasir     │     │                  │
+│             │     │  Lapangan)  │     │                  │
+└──────┬──────┘     └──────┬──────┘     └─────────┬────────┘
+       │                   │                      │
+       └───────────────────┼──────────────────────┘
+                           ▼
                     ┌───────────────┐
                     │     Nginx     │  (Reverse Proxy + SSL Termination)
-                    └───────┬───────┘
-                            ▼
+                    └──────┬────────┘
+                           ▼
                     ┌───────────────┐
                     │  Laravel API  │  (Stateless, horizontally scalable)
-                    └───────┬───────┘
-              ┌─────────────┼─────────────┐
-              ▼             ▼             ▼
-      ┌──────────────┐┌──────────┐┌──────────────┐
-      │ PostgreSQL    ││  Redis   ││ Queue Worker  │
-      │ (Primary DB)  ││ (Cache & ││ (Async Jobs:  │
-      │               ││  Session)││ Reports, Notif)│
-      └──────────────┘└──────────┘└──────────────┘
+                    └──────┬────────┘
+              ┌────────────┼──────────────┐
+              ▼            ▼              ▼
+      ┌──────────────┐┌──────────┐┌────────────────┐
+      │ PostgreSQL   ││  Redis   ││ Queue Worker   │
+      │ (Primary DB) ││ (Cache & ││ (Async Jobs:   │
+      │              ││  Session)││ Reports, Notif)│
+      └──────────────┘└──────────┘└────────────────┘
 ```
 
 Detail komponen, alasan pemilihan pola arsitektur, dan strategi scaling dijelaskan penuh pada [`system-architecture.md`](system-architecture.md).

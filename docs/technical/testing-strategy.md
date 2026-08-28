@@ -16,15 +16,15 @@
 ## 2. Test Pyramid untuk Sistem Ini
 
 ```
-                    ▲
-                   ╱ ╲
-                  ╱E2E╲              (Sedikit — alur kritis lintas sistem)
-                 ╱─────╲
-                ╱ Integr-╲           (Sedang — interaksi Service+Repository+DB)
-               ╱  ation   ╲
+                     ▲
+                   ╱   ╲
+                  ╱ E2E ╲              (Sedikit — alur kritis lintas sistem)
+                 ╱───────╲
+                ╱ Integr- ╲           (Sedang — interaksi Service+Repository+DB)
+               ╱  ation    ╲
               ╱─────────────╲
-             ╱   Unit Test    ╲      (Banyak — logic murni, Service dengan mock)
-            ╱───────────────────╲
+             ╱   Unit Test   ╲      (Banyak — logic murni, Service dengan mock)
+            ╱─────────────────╲
 ```
 
 ---

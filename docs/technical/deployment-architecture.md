@@ -13,48 +13,48 @@
                                  │
                                  ▼
                     ┌─────────────────────────┐
-                    │   Route 53 (DNS)         │
+                    │   Route 53 (DNS)        │
                     └────────────┬────────────┘
                                  │
                     ┌────────────▼────────────┐
-                    │  Application Load        │
-                    │  Balancer (ALB) / atau   │
-                    │  Elastic IP + Nginx       │
-                    │  (tergantung skala)       │
+                    │  Application Load       │
+                    │  Balancer (ALB) / atau  │
+                    │  Elastic IP + Nginx     │
+                    │  (tergantung skala)     │
                     └────────────┬────────────┘
                                  │
               ┌──────────────────┼──────────────────┐
               ▼                  ▼                  ▼
-     ┌────────────────┐┌────────────────┐┌────────────────┐
-     │  EC2 Instance 1  ││  EC2 Instance 2 ││  EC2 Instance N │
+     ┌───────────────────┐┌─────────────────┐┌─────────────────┐
+     │  EC2 Instance 1   ││  EC2 Instance 2 ││  EC2 Instance N │
      │  (App Server)     ││  (App Server)   ││  (App Server)   │
-     │  - Nginx           ││  - Nginx        ││  - Nginx        │
-     │  - PHP-FPM/Laravel ││  - PHP-FPM      ││  - PHP-FPM      │
-     │  - Queue Worker    ││  (opsional)     ││  (opsional)     │
-     └────────────────┘└────────────────┘└────────────────┘
+     │  - Nginx          ││  - Nginx        ││  - Nginx        │
+     │  - PHP-FPM/Laravel││  - PHP-FPM      ││  - PHP-FPM      │
+     │  - Queue Worker   ││  (opsional)     ││  (opsional)     │
+     └───────────────────┘└─────────────────┘└─────────────────┘
               │                  │                  │
               └──────────────────┼──────────────────┘
                                  ▼
               ┌───────────────────────────────────────┐
-              │        VPC Private Subnet               │
-              │  ┌──────────────┐   ┌──────────────┐    │
-              │  │  EC2 Instance │   │  EC2 Instance │    │
-              │  │  PostgreSQL   │   │  Redis        │    │
-              │  │  (Primary)    │   │               │    │
-              │  └──────┬───────┘   └──────────────┘    │
-              │         │                                │
-              │  ┌──────▼───────┐                        │
-              │  │  EC2 Instance │  (opsional, tahap      │
-              │  │  PostgreSQL   │   pertumbuhan)          │
-              │  │  (Replica)    │                        │
-              │  └──────────────┘                        │
+              │        VPC Private Subnet             │
+              │  ┌──────────────┐   ┌───────────────┐ │
+              │  │  EC2 Instance│   │  EC2 Instance │ │
+              │  │  PostgreSQL  │   │  Redis        │ │
+              │  │  (Primary)   │   │               │ │
+              │  └──────┬───────┘   └───────────────┘ │
+              │         │                             │
+              │  ┌──────▼────────┐                    │
+              │  │  EC2 Instance │  (opsional, tahap  │
+              │  │  PostgreSQL   │   pertumbuhan)     │
+              │  │  (Replica)    │                    │
+              │  └───────────────┘                    │
               └───────────────────────────────────────┘
                                  │
                     ┌────────────▼────────────┐
-                    │  S3 (Backup & File        │
-                    │  Storage untuk laporan     │
-                    │  hasil ekspor)             │
-                    └───────────────────────────┘
+                    │  S3 (Backup & File      │
+                    │  Storage untuk laporan  │
+                    │  hasil ekspor)          │
+                    └─────────────────────────┘
 ```
 
 ### 1.2 Tahapan Skala Infrastruktur

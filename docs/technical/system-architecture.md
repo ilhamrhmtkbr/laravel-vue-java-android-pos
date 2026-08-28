@@ -46,28 +46,28 @@ Detail lengkap tiap layer dijelaskan pada [`service-layer-design.md`](service-la
 ### 2.1 Diagram Komponen
 
 ```
-┌───────────────────────────────────────────────────────────────────────┐
+┌────────────────────────────────────────────────────────────────────────┐
 │                              CLIENT LAYER                              │
-│  ┌──────────────┐        ┌──────────────┐        ┌──────────────┐      │
-│  │  Vue Web App │        │ Android App  │        │ (Future:      │      │
-│  │  - Back Office│       │ - Kasir      │        │  Partner API) │      │
-│  │  - Kasir Web  │       │   Lapangan   │        │               │      │
-│  └───────┬──────┘        └───────┬──────┘        └───────┬──────┘      │
+│  ┌───────────────┐       ┌──────────────┐        ┌──────────────┐      │
+│  │  Vue Web App  │       │ Android App  │        │ (Future:     │      │
+│  │  - Back Office│       │ - Kasir      │        │  Partner API)│      │
+│  │  - Kasir Web  │       │   Lapangan   │        │              │      │
+│  └───────┬───────┘       └───────┬──────┘        └───────┬──────┘      │
 └──────────┼───────────────────────┼───────────────────────┼─────────────┘
            │                       │                       │
            └───────────────────────┼───────────────────────┘
                                     ▼
-                        ┌───────────────────────┐
-                        │   Nginx (Reverse Proxy)│
+                        ┌─────────────────────────┐
+                        │   Nginx (Reverse Proxy) │
                         │   - SSL Termination     │
                         │   - Load Balancing      │
                         │   - Rate Limiting (edge)│
-                        └───────────┬────────────┘
+                        └───────────┬─────────────┘
                                     ▼
-┌───────────────────────────────────────────────────────────────────────┐
+┌────────────────────────────────────────────────────────────────────────┐
 │                        APPLICATION LAYER                               │
 │                  ┌────────────────────────────┐                        │
-│                  │      Laravel API (PHP-FPM)  │                        │
+│                  │      Laravel API (PHP-FPM) │                        │
 │                  │  ┌──────────────────────┐  │                        │
 │                  │  │ Controllers          │  │                        │
 │                  │  ├──────────────────────┤  │                        │
@@ -76,28 +76,28 @@ Detail lengkap tiap layer dijelaskan pada [`service-layer-design.md`](service-la
 │                  │  ├──────────────────────┤  │                        │
 │                  │  │ Repositories         │  │                        │
 │                  │  ├──────────────────────┤  │                        │
-│                  │  │ Models (Eloquent)     │  │                        │
+│                  │  │ Models (Eloquent)    │  │                        │
 │                  │  └──────────────────────┘  │                        │
 │                  └───────────┬────────────────┘                        │
-│                              │                                          │
+│                              │                                         │
 │                  ┌───────────┴───────────┐                             │
 │                  ▼                       ▼                             │
-│         ┌────────────────┐      ┌────────────────┐                     │
-│         │  Queue Worker    │      │  Scheduler      │                    │
-│         │  (Laravel Queue) │      │  (Laravel       │                    │
-│         │  - Notifikasi    │      │   Scheduler)    │                    │
-│         │  - Laporan besar │      │  - Reminder     │                    │
-│         │  - Sinkronisasi  │      │    kadaluarsa   │                    │
-│         └────────────────┘      └────────────────┘                     │
-└───────────────────────────────────────────────────────────────────────┘
+│         ┌──────────────────┐      ┌─────────────────┐                  │
+│         │  Queue Worker    │      │  Scheduler      │                  │
+│         │  (Laravel Queue) │      │  (Laravel       │                  │
+│         │  - Notifikasi    │      │   Scheduler)    │                  │
+│         │  - Laporan besar │      │  - Reminder     │                  │
+│         │  - Sinkronisasi  │      │    kadaluarsa   │                  │
+│         └──────────────────┘      └─────────────────┘                  │
+└────────────────────────────────────────────────────────────────────────┘
                                     │
               ┌─────────────────────┼─────────────────────┐
               ▼                     ▼                     ▼
     ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐
-    │   PostgreSQL       │  │      Redis        │  │  File Storage    │
-    │   (Primary Database)│  │  - Cache           │  │  (Local Volume/  │
-    │                    │  │  - Session Store    │  │   S3-compatible  │
-    │                    │  │  - Queue Broker      │  │   for reports)   │
+    │ PostgreSQL       │  │      Redis       │  │  File Storage    │
+    │(Primary Database)│  │  - Cache         │  │  (Local Volume/  │
+    │                  │  │  - Session Store │  │   S3-compatible  │
+    │                  │  │  - Queue Broker  │  │   for reports)   │
     └──────────────────┘  └──────────────────┘  └──────────────────┘
 ```
 
