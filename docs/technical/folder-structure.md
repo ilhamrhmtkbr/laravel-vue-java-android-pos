@@ -17,51 +17,18 @@
 
 ```
 pos-backend/
-├── app/
-│   ├── Console/
-│   │   └── Commands/                  # Artisan command kustom (mis. cek produk kadaluarsa)
-│   ├── Events/                        # Domain events (SaleCompleted, StockAdjusted, dll)
-│   ├── Exceptions/
-│   │   ├── Handler.php
-│   │   └── Business/                  # Custom exception per business rule (InsufficientStockException, dll)
-│   ├── Http/
-│   │   ├── Controllers/
-│   │   │   ├── Api/V1/
-│   │   │   │   ├── Sales/             # SalesController, SaleReturnController
-│   │   │   │   ├── Purchasing/        # PurchaseOrderController, GoodsReceiptController
-│   │   │   │   ├── Inventory/         # StockController, StockTransferController, StockOpnameController
-│   │   │   │   ├── Approval/          # ApprovalController
-│   │   │   │   ├── MasterData/        # ProductController, CustomerController, SupplierController, BranchController
-│   │   │   │   ├── Report/            # SalesReportController, StockReportController, FinanceReportController
-│   │   │   │   └── Auth/              # AuthController
-│   │   ├── Middleware/
-│   │   │   ├── EnsureBranchScope.php  # Menegakkan data scoping per cabang (BRULE-MB-02)
-│   │   │   └── CheckPermission.php
-│   │   ├── Requests/                  # Form Request per endpoint (validasi input)
-│   │   │   ├── Sales/StoreSaleRequest.php
-│   │   │   └── ...
-│   │   └── Resources/                 # API Resource (transformasi response JSON)
-│   │       ├── Sales/SaleResource.php
-│   │       └── ...
-│   ├── Listeners/                     # Listener untuk domain events (kirim notifikasi, catat audit log)
-│   ├── Models/                        # Eloquent Models (representasi tabel database)
-│   │   ├── Sale.php
-│   │   ├── SaleItem.php
-│   │   ├── Product.php
-│   │   ├── Branch.php
-│   │   └── ...
-│   ├── Policies/                      # Authorization Policy per model (lihat authorization-design.md)
-│   ├── Providers/
-│   ├── Repositories/                  # Data access layer (lihat repository-layer-design.md)
-│   │   ├── Contracts/                 # Interface repository
-│   │   │   └── SaleRepositoryInterface.php
-│   │   └── Eloquent/                  # Implementasi konkret
-│   │       └── EloquentSaleRepository.php
-│   └── Services/                      # Business logic layer (lihat service-layer-design.md)
-│       ├── Sales/SalesService.php
-│       ├── Inventory/StockService.php
-│       ├── Approval/ApprovalService.php
-│       └── ...
+├── Application
+├── Domain
+├── Helpers
+├── Infrastructure
+├── Models
+│       └── User.php
+├── Presentation
+│       └── Http
+│           └── Controllers
+│               └── Controller.php
+└── Providers
+    └── AppServiceProvider.php
 ├── config/
 ├── database/
 │   ├── factories/                     # Model factory untuk testing & seeding
