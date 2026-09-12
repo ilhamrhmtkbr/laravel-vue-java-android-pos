@@ -173,14 +173,14 @@ services:
 
 ```
 ┌─────────────────────────────────────────────┐
-│           Docker Network: pos_network         │
-│                                                │
-│  nginx ──▶ app ──▶ postgres                   │
-│              │                                │
-│              └───▶ redis                       │
-│                                                │
-│  queue-worker ──▶ postgres, redis              │
-│  scheduler ──▶ postgres, redis                 │
+│           Docker Network: pos_network       │
+│                                             │
+│  nginx ──▶ app ──▶ postgres                 │
+│              │                              │
+│              └───▶ redis                    │
+│                                             │
+│  queue-worker ──▶ postgres, redis           │
+│  scheduler ──▶ postgres, redis              │
 └─────────────────────────────────────────────┘
 ```
 

@@ -159,4 +159,4 @@ Project ini dibuat sebagai **portfolio teknis** untuk menunjukkan kemampuan desa
 
 ---
 
-**Selanjutnya:** [`docs/business/README.md`](docs/business/README.md) — Ringkasan dokumentasi bisnis.
+**Selanjutnya:** [`business/README.md`](business/README.md) — Ringkasan dokumentasi bisnis.

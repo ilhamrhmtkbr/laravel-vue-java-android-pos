@@ -8,25 +8,25 @@
 
 ```
                     ┌────────────────────────────────────────────┐
-                    │                  SISTEM POS                 │
-                    │                                              │
-   Owner/Direktur ──┼──▶ Lihat Dashboard Konsolidasi               │
-                    │                                              │
-   HO Admin ────────┼──▶ Kelola Master Data & Harga Terpusat       │
-                    │                                              │
-   Branch Manager ──┼──▶ Approval, Kelola Cabang, Lihat Laporan    │
-                    │                                              │
-   Supervisor ──────┼──▶ Approval Transaksi Sensitif               │
-                    │                                              │
-   Kasir ───────────┼──▶ Transaksi Penjualan, Buka/Tutup Shift     │
-                    │                                              │
-   Staff Gudang ────┼──▶ Penerimaan Barang, Transfer, Stok Opname  │
-                    │                                              │
-   Apoteker ────────┼──▶ Validasi Resep                            │
-                    │                                              │
-   Waiter/Kitchen ──┼──▶ Kelola Pesanan Meja, Kitchen Order        │
-                    │                                              │
-   Pelanggan ───────┼──▶ (Aktor tidak langsung — dilayani kasir)   │
+                    │                  SISTEM POS                │
+                    │                                            │
+   Owner/Direktur ──┼──▶ Lihat Dashboard Konsolidasi             │
+                    │                                            │
+   HO Admin ────────┼──▶ Kelola Master Data & Harga Terpusat     │
+                    │                                            │
+   Branch Manager ──┼──▶ Approval, Kelola Cabang, Lihat Laporan  │
+                    │                                            │
+   Supervisor ──────┼──▶ Approval Transaksi Sensitif             │
+                    │                                            │
+   Kasir ───────────┼──▶ Transaksi Penjualan, Buka/Tutup Shift   │
+                    │                                            │
+   Staff Gudang ────┼──▶ Penerimaan Barang, Transfer, Stok Opname│
+                    │                                            │
+   Apoteker ────────┼──▶ Validasi Resep                          │
+                    │                                            │
+   Waiter/Kitchen ──┼──▶ Kelola Pesanan Meja, Kitchen Order      │
+                    │                                            │
+   Pelanggan ───────┼──▶ (Aktor tidak langsung — dilayani kasir) │
                     └────────────────────────────────────────────┘
 ```
 

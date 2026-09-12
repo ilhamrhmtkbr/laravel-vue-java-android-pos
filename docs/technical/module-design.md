@@ -238,22 +238,22 @@ Auth & Access
                          └─────────────┘
 
 ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│ Master Data │◀───▶│    Sales     │◀───▶│  Promotion  │
+│ Master Data │◀───▶│    Sales    │◀───▶│  Promotion  │
 └─────────────┘     └──────┬──────┘     └─────────────┘
                             │
               ┌─────────────┼─────────────┐
               ▼             ▼             ▼
       ┌─────────────┐┌─────────────┐┌─────────────┐
-      │  Inventory   ││  Approval   ││Notification │
+      │  Inventory  ││  Approval   ││Notification │
       └──────┬──────┘└─────────────┘└─────────────┘
              │
              ▼
       ┌─────────────┐
-      │ Purchasing   │
+      │ Purchasing  │
       └─────────────┘
 
       ┌─────────────────────────────────┐
-      │   Reporting & Dashboard          │  (read-only dari seluruh modul di atas)
+      │   Reporting & Dashboard         │  (read-only dari seluruh modul di atas)
       └─────────────────────────────────┘
 ```
 

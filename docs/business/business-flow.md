@@ -39,14 +39,14 @@ Detail skenario alternatif (pembayaran gagal, produk tidak ditemukan, dll) dijel
 
 ```
 ┌───────────────┐    ┌───────────────┐    ┌───────────────┐
-│  Purchase      │───▶│  Penerimaan   │───▶│  Stok Masuk   │
-│  Order (PO)    │    │  Barang       │    │  di Cabang/   │
-│  ke Supplier   │    │  (Goods       │    │  Gudang       │
-│                │    │  Receipt)     │    │               │
+│  Purchase     │───▶│  Penerimaan   │───▶│  Stok Masuk   │
+│  Order (PO)   │    │  Barang       │    │  di Cabang/   │
+│  ke Supplier  │    │  (Goods       │    │  Gudang       │
+│               │    │  Receipt)     │    │               │
 └───────────────┘    └───────────────┘    └───────┬───────┘
-                                                    │
-                    ┌───────────────────────────────┼───────────────────────────────┐
-                    ▼                               ▼                               ▼
+                                                  │
+                    ┌─────────────────────────────┼───────────────────────────────┐
+                    ▼                             ▼                               ▼
             ┌───────────────┐              ┌───────────────┐              ┌───────────────┐
             │  Dijual ke    │              │  Transfer ke  │              │  Stok Opname/ │
             │  Pelanggan    │              │  Cabang Lain  │              │  Penyesuaian  │

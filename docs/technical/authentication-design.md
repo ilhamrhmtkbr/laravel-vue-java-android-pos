@@ -115,18 +115,18 @@ Implementasi detail rate limiting menggunakan Redis sebagai storage counter, sej
 ## 7. Diagram Sekuens Login Lengkap
 
 ```
-Klien          Nginx        Laravel API      Redis        PostgreSQL
-  │              │               │             │               │
-  │─Login req──▶│               │             │               │
-  │              │─forward─────▶│             │               │
-  │              │               │─rate limit check─▶│         │
-  │              │               │◀─OK─────────│               │
-  │              │               │─cek kredensial──────────────▶│
-  │              │               │◀─data pegawai─────────────────│
-  │              │               │─generate token───────────────▶│ (simpan hash)
-  │              │               │─catat log login──────────────▶│
-  │              │◀─response─────│             │               │
-  │◀─token + data│               │             │               │
+Klien          Nginx        Laravel API             Redis        PostgreSQL
+  │              │               │                   │               │
+  │─Login req──▶ │               │                   │               │
+  │              │─forward─────▶ │                   │               │
+  │              │               │─rate limit check─▶│               │
+  │              │               │◀───────OK─────────│               │
+  │              │               │────────cek kredensial────────────▶│
+  │              │               │◀───────data pegawai───────────────│
+  │              │               │────────generate token────────────▶│ (simpan hash)
+  │              │               │────────catat log login───────────▶│
+  │              │◀─response─────│                   │               │
+  │◀─token + data│               │                   │               │
 ```
 
 ---
